@@ -35,9 +35,9 @@ header{
     /*Don't forget to vertically and horizontally 
     align the element*/
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
   }
 
 /*Requirement 5*/
@@ -48,8 +48,7 @@ header{
   padding: 0 0 50px 0;
   /*Your code here.*/
   /*Take a look at flex-basis*/
-  flex-basis: 0;
-  width: 400px
+  flex-basis: 400px
 }
 
 /* Requirement 6*/
@@ -79,7 +78,7 @@ header{
 /**  UNCOMMENT THIS CODE ONCE YOU
 /**  HAVE THE SELECTOR
 */
-.gallery.img{
+.gallery img{
   border: 10px #50C7C7 solid;
   margin: 10px;
   width: 300px;
@@ -89,19 +88,26 @@ header{
 /*Requirement 9*/
 #logo{
    /*Your code here.*/
-
- 
+  animation-name: logo_grow;
+  animation-duration: 15s;
+  animation-iteration-count: 1;
 }
 
 /*Keyframes for animation*/
 @-webkit-keyframes logo_grow{
   /*Your code here.*/
-
+  0% { opacity: 0; }
+  100% {opacity: 1 ;}
 }
 
 @keyframes logo_grow{
   /*Your code here.*/
-
+  from{
+    width: 25px;
+  }
+  to{
+    width:420px;
+  }
 } 
 
 @media screen and (min-width: 850px){
@@ -112,6 +118,7 @@ header{
     display:flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
   }
 
   /*Requirement 10*/
@@ -120,7 +127,6 @@ header{
     display:flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-end;
   }
 
   /*Requirement 11*/
@@ -129,7 +135,7 @@ header{
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 230px;
+    flex-basis: 230px;
     align-items: center;
     justify-content: center;
   } 
